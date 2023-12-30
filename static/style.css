@@ -1,0 +1,60 @@
+/* Reset some default styles for consistency across browsers */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #d2e2cf; /* Light green background */
+    color: #333; /* Dark text color */
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.navbar {
+    margin-bottom: 20px;
+    background-color: #4d6d58; /* Dark green navbar */
+}
+
+/* Add your custom styles below */
+/* Example: */
+.header {
+    background-color: #336633; /* Dark green header background */
+    color: #fff; /* White text color */
+    padding: 20px;
+    text-align: center;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    color: #fff; /* White navbar text */
+}
+
+.navbar-nav .nav-link {
+    color: #fff; /* White navbar text */
+}
+
+/* Enhance the look and feel with jungle-inspired colors */
+/* Adjust these colors based on your preferences */
+.main-content {
+    background-color: #e3f0d2; /* Light green content background */
+    padding: 20px;
+}
+
+.card {
+    background-color: #b5cc94; /* Lighter green card background */
+    border: 1px solid #336633; /* Dark green border */
+    margin-bottom: 20px;
+}
+
+.card-header {
+    background-color: #336633; /* Dark green card header background */
+    color: #fff; /* White text color for card header */
+    padding: 10px;
+}
+
+/* Add more styles as needed for specific elements */

@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block title %}Zoo B Doo B - Add Animal{% endblock %}
+
+{% block brand %}Zoo B Doo B{% endblock %}
+
+{% block add_animal_link %}Add Animal{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h2>Add a New Animal</h2>
+        <form action="/add" method="post">
+            <!-- Add your form fields for adding a new animal here -->
+            <label for="species">Species:</label>
+            <input type="text" name="species" required>
+
+            <label for="animal_name">Animal Name:</label>
+            <input type="text" name="animal_name" required>
+
+            <label for="age">Animal Age:</label>
+            <input type="text" name="age" required>
+
+            <label for="sex">Animal Sex:</label>
+            <input type="text" name="sex" required>
+
+            <label for="enclosure_number">Animal Enclosure Number:</label>
+            <input type="text" name="enclosure_number" >
+
+            <label for="date_acquired">Date Acquired:</label>
+            <input type="text" name="date_acquired" >
+
+            <label for="health_status">Health Status:</label>
+            <input type="text" name="health_status" >
+
+            <label for="last_vet_visit">Last Vet Visit:</label>
+            <input type="text" name="last_vet_visit" >
+
+            <label for="diet">Animal Diet:</label>
+            <input type="text" name="diet" >
+
+            <label for="conservation_status">Animal Conservation Status:</label>
+            <input type="text" name="conservation_status" >
+
+            <label for="image_url">Animal Photo:</label>
+            <input type="text" name="image_url" >
+
+            <label for="genetic_information">Animal Genetic Information:</label>
+            <input type="text" name="genetic_information" >
+
+            <label for="notes">Notes:</label>
+            <input type="text" name="notes" >
+
+            <!-- Add other form fields as needed -->
+
+            <button type="submit" class="btn btn-primary mt-3">Add Animal</button>
+        </form>
+    </div>
+{% endblock %}

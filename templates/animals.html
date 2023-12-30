@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block title %}Zoo B Doo B - Animals{% endblock %}
+
+{% block brand %}Zoo B Doo B{% endblock %}
+
+{% block view_animals_link %}View Animals{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="mt-4 mb-4">Animals in the Zoo</h2>
+
+    <div id="accordion">
+        {% for animal in animals %}
+        <div class="card">
+            <div class="card-header" id="heading{{ loop.index }}">
+                <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapse{{ loop.index }}"
+                        aria-expanded="true" aria-controls="collapse{{ loop.index }}">
+                        <div class="row">
+                            <div class="col-md-4 mb-4">
+                                <img src="{{ animal[11] }}" class="card-img-top" alt="Animal Image">
+                            </div>
+                            <div class="col-md-8 mb-4">
+                                <h5 class="card-title">{{ animal[2] }}</h5>
+                                <p class="card-text">
+                                    <strong>Species:</strong> {{ animal[1] }}<br>
+                                    <strong>Age:</strong> {{ animal[3] }}<br>
+                                    <strong>Sex:</strong> {{ animal[4] }}<br>
+                    
+                                </p>
+                            </div>
+                        </div>
+                    </button>
+                </h5>
+            </div>
+            <div id="collapse{{ loop.index }}" class="collapse" aria-labelledby="heading{{ loop.index }}"
+                data-parent="#accordion">
+                <div class="card-body">
+                    <strong>Enclosure Number:</strong> {{ animal[5] }}<br>
+                    <strong>Date Acquired:</strong> {{ animal[6] }}<br>
+                    <strong>Health Status:</strong> {{ animal[7] }}<br>
+                    <strong>Last Vet Visit:</strong> {{ animal[8] }}<br>
+                    <strong>Diet:</strong> {{ animal[9] }}<br>
+                    <strong>Conservation Status:</strong> {{ animal[10] }}<br>
+                    <strong>Genetic Information:</strong> {{ animal[12] }}<br>
+                    <strong>Notes:</strong> {{ animal[13] }}<br>
+
+                    <div>
+                        <!-- Update Button -->
+                        <a href="{{ url_for('update_animal', animal_id=animal[0]) }}" class="btn btn-primary">Update</a>
+
+                        <!-- Delete Button -->
+                        <form method="post" action="{{ url_for('delete_animal', animal_id=animal[0]) }}"
+                            style="display: inline-block;">
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

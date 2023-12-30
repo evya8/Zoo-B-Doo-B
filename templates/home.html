@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}Zoo B Doo B - Home{% endblock %}
+
+{% block brand %}Zoo B Doo B{% endblock %}
+
+{% block home_link %}Home{% endblock %}
+
+{% block content %}
+<style>
+    body {
+        background-image: url('https://www.firstpalette.com/images/craft-mainpic-large/foldingzooanimals-main.jpg');
+        background-size: cover;
+        background-position: center-bottom;
+        color: rgb(193, 190, 190);
+    }
+</style>
+<div class="container">
+    <h1 style="background-color: rgba(179, 179, 179, 0.7); text-decoration: solid; color: rgb(49, 11, 11); padding: 15px;">Welcome to Zoo B Doo B!</h2>
+    <p style="color: black; font-family: 'Helvetica', sans-serif; font-size: 18px; font-weight: bold; background-color: rgba(255, 255, 255, 0.7); padding: 15px;">
+        Explore the fascinating world of wildlife and conservation with our interactive zoo app. Discover a diverse range
+        of animal species, learn about their habitats, and contribute to the global effort to protect endangered
+        wildlife. Whether you're an animal enthusiast or just curious about the natural world, Zoo B Doo B provides a
+        unique platform to connect with and appreciate the beauty of nature. From adding new animals to viewing detailed
+        information about existing ones, our app offers an educational and entertaining experience for users of all
+        ages.
+    </p>    
+    <blockquote class="blockquote mt-4">
+        <p class="mb-0" style="color: black; background-color: rgba(255, 255, 255, 0.7);text-decoration: dashed; padding: 15px;">"The least I can do is speak out for those who cannot speak for themselves."</p>
+        <footer class="blockquote-footer" style="color: black;background-color: rgba(255, 255, 255, 0.7); padding: 15px; text-decoration: underline; font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Jane Goodall</footer>
+    </blockquote>
+</div>
+{% endblock %}

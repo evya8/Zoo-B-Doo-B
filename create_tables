@@ -1,0 +1,95 @@
+<!-- 
+# # Create the animals table
+# cur.execute("""
+#     CREATE TABLE animals (
+#         animal_id INTEGER PRIMARY KEY AUTOINCREMENT,
+#         species VARCHAR(50) NOT NULL,
+#         name VARCHAR(50) NOT NULL,
+#         age INT,
+#         sex VARCHAR(10),
+#         enclosure_number INT,
+#         date_acquired DATE,
+#         health_status VARCHAR(50),
+#         last_vet_visit DATE,
+#         diet VARCHAR(100),
+#         conservation_status VARCHAR(50),
+#         image_url VARCHAR(255),
+#         genetic_information TEXT,
+#         notes TEXT
+#     );
+# """)
+
+## Create Users Table
+# cur.execute('''CREATE TABLE IF NOT EXISTS users (
+#                  id INTEGER PRIMARY KEY AUTOINCREMENT,
+#                  username TEXT NOT NULL,
+#                  password TEXT NOT NULL
+#               )''')
+
+# # Commit the changes and close the connection
+# con.commit()
+# con.close()
+
+
+
+
+
+{% extends "layout.html" %}
+
+{% block title %}Zoo B Doo B - Animals{% endblock %}
+
+{% block brand %}Zoo B Doo B{% endblock %}
+
+{% block view_animals_link %}View Animals{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h2 class="mt-4 mb-4">Animals in the Zoo</h2>
+
+        <div class="row">
+            {% for animal in animals %}
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="{{ animal[11] }}" class="card-img-top" alt="Animal Image">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ animal[2] }}</h5>
+                            <p class="card-text">
+                                <strong>Species:</strong> {{ animal[1] }}<br>
+                                <strong>Age:</strong> {{ animal[3] }}<br>
+                                <strong>Sex:</strong> {{ animal[4] }}<br>
+                                <!-- Add more details as needed -->
+                            </p>
+                            <div class="text-center">
+                                <!-- Update Button -->
+                                <a href="{{ url_for('update_animal', animal_id=animal[0]) }}" class="btn btn-primary">Update</a>
+
+                                <!-- Delete Button -->
+                                <form method="post" action="{{ url_for('delete_animal', animal_id=animal[0]) }}" style="display: inline-block;">
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+
+
+
+cur.execute("""
+INSERT INTO animals (species, name, age, sex, enclosure_number, date_acquired, health_status, last_vet_visit, diet, conservation_status, image_url, genetic_information, notes)
+VALUES 
+('Gorilla', 'George', 8, 'Male', 201, '2021-10-12', 'Good', '2022-09-10', 'Herbivore', 'Endangered', 'https://examorilla.jpg', 'Genetic info for Gorilla', 'Large primate with black fur'),
+('Koala', 'Kevin', 3, 'Male', 202, '2023-01-05', 'Excellent', '2023-11-20', 'Herbivore', 'Vulnerable', 'https://example.com/koala2.jpg', 'Genetic info for Koala', 'Tree-dwelling marsupial'),
+('Leopard', 'Luna', 5, 'Female', 203, '2022-08-08', 'Stable', '2023-02-28', 'Carnivore', 'Near Threatened', 'https://example.com/leopard.jpg', 'Genetic info for Leopard', 'Spotted big cat'),
+('Penguin', 'Percy', 4, 'Male', 204, '2022-02-22', 'Good', '2023-08-15', 'Fish-based diet', 'Near Threatened', 'https://example.com/penguin2.jpg', 'Genetic info for Penguin', 'Black and white, flippers'),
+('Sloth', 'Sunny', 6, 'Female', 205, '2021-07-07', 'Stable', '2022-12-15', 'Herbivore', 'Least Concern', 'https://example.com/sloth.jpg', 'Genetic info for Sloth', 'Slow-moving arboreal mammal'),
+('Giraffe', 'Gary', 7, 'Male', 206, '2021-04-18', 'Healthy', '2022-10-30', 'Herbivore', 'Least Concern', 'https://example.com/giraffe2.jpg', 'Genetic info for Giraffe', 'Long neck, spotted coat'),
+('Zebra', 'Ziggy', 2, 'Male', 207, '2023-03-15', 'Excellent', '2023-09-28', 'Herbivore', 'Least Concern', 'https://example.com/zebra2.jpg', 'Genetic info for Zebra', 'Black and white stripes'),
+('Panda', 'Penny', 4, 'Female', 208, '2021-11-28', 'Good', '2023-05-10', 'Vegetarian diet', 'Vulnerable', 'https://example.com/panda2.jpg', 'Genetic info for Panda', 'Black and white bear'),
+('Cheetah', 'Charlie', 3, 'Female', 209, '2022-06-25', 'Stable', '2023-01-18', 'Carnivore', 'Vulnerable', 'https://example.com/cheetah.jpg', 'Genetic info for Cheetah', 'Fastest land animal'),
+('Kangaroo', 'Kara', 5, 'Female', 210, '2021-12-10', 'Good', '2022-07-30', 'Herbivore', 'Least Concern', 'https://example.com/kangaroo2.jpg', 'Genetic info for Kangaroo', 'Marsupial, powerful hind legs');
+""")
+con.commit() -->

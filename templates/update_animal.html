@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+
+{% block title %}Zoo B Doo B - Update Animal{% endblock %}
+
+{% block brand %}Zoo B Doo B{% endblock %}
+
+{% block content %}
+    <div class="container mt-4">
+        <h2 class="mb-4">Update Animal</h2>
+        <form method="post" action="{{ url_for('update_animal', animal_id=animal['animal_id']) }}">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="new_species">New Species:</label>
+                    <input type="text" class="form-control" id="new_species" name="new_species" value="{{ animal['species'] }}">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="new_name">New Name:</label>
+                    <input type="text" class="form-control" id="new_name" name="new_name" value="{{ animal['name'] }}">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="new_age">New Age:</label>
+                    <input type="text" class="form-control" id="new_age" name="new_age" value="{{ animal['age'] }}">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="new_sex">New Sex:</label>
+                    <input type="text" class="form-control" id="new_sex" name="new_sex" value="{{ animal['sex'] }}">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="new_enclosure_number">New Enclosure Number:</label>
+                    <input type="text" class="form-control" id="new_enclosure_number" name="new_enclosure_number" value="{{ animal['enclosure_number'] }}">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="new_date_acquired">New Date Acquired:</label>
+                    <input type="text" class="form-control" id="new_date_acquired" name="new_date_acquired" value="{{ animal['date_acquired'] }}">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="new_health_status">New Health Status:</label>
+                    <input type="text" class="form-control" id="new_health_status" name="new_health_status" value="{{ animal['health_status'] }}">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="new_last_vet_visit">New Last Vet Visit:</label>
+                    <input type="text" class="form-control" id="new_last_vet_visit" name="new_last_vet_visit" value="{{ animal['last_vet_visit'] }}">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="new_diet">New Animal Diet:</label>
+                    <input type="text" class="form-control" id="new_diet" name="new_diet" value="{{ animal['diet'] }}">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="new_conservation_status">New Animal Conservation Status:</label>
+                    <input type="text" class="form-control" id="new_conservation_status" name="new_conservation_status" value="{{ animal['conservation_status'] }}">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="new_image_url">New Animal Photo URL:</label>
+                    <input type="text" class="form-control" id="new_image_url" name="new_image_url" value="{{ animal['image_url'] }}">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="new_genetic_information">New Animal Genetic Information:</label>
+                    <input type="text" class="form-control" id="new_genetic_information" name="new_genetic_information" value="{{ animal['genetic_information'] }}">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="new_notes">New Notes:</label>
+                    <input type="text" class="form-control" id="new_notes" name="new_notes" value="{{ animal['notes'] }}">
+                </div>
+            <div class="form-row">
+            </div>
+
+            <button type="submit" class="btn btn-primary mt-3">Update Animal</button>
+        </form>
+    </div>
+{% endblock %}
